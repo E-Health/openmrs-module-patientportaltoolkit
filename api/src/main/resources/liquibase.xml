@@ -142,4 +142,25 @@
 
         </createTable>
     </changeSet>
+
+    <changeSet author="beapen" id="2018-10-18-7">
+        <comment>Create the patientportal_passwordchange_requests Table</comment>
+        <createTable tableName="patientportal_passwordchange_requests">
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="uuid" type="char(38)"/>
+            <column name="retired" type="boolean"/>
+            <column name="user_id" type="int"/>
+            <column name="request_date" type="datetime"/>
+
+
+            <column name="created_by" type="char(38)"/>
+            <column name="deleted_by" type="char(38)"/>
+
+            <column name="created_on" type="datetime"/>
+            <column name="deleted_on" type="datetime"/>
+
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
