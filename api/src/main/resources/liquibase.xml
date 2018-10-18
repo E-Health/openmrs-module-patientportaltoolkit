@@ -18,35 +18,35 @@
             <column name="uuid" type="char(38)"/>
 
             <column name="cancerType" type="char(255)"/>
-            <column name="usefulContacts" type="text"/>
+            <column name="usefulcontacts" type="text"/>
             <column name="resources" type="text"/>
 
+            <column name="created_by" type="char(38)"/>
+            <column name="deleted_by" type="char(38)"/>
+
+            <column name="created_on" type="datetime"/>
+            <column name="deleted_on" type="datetime"/>
 
         </createTable>
     </changeSet>
 
-    <changeSet author="beapen" id="20160718-2">
-        <comment>Create the NuForm Instance Table</comment>
-        <createTable tableName="nuform">
+    <changeSet author="beapen" id="2018-10-18-2">
+        <comment>Create the patientportal_guideline Table</comment>
+        <createTable tableName="patientportal_guideline">
             <column autoIncrement="true" name="id" type="int">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="uuid" type="char(38)"/>
-            <column name="nuformDef" type="int"/>
+            <column name="name" type="char(255)"/>
+            <column name="followup_procedure" type="int"/>
+            <column name="followup_timeline" type="text"/>
+            <column name="concept_id" type="int"/>
 
             <column name="created_by" type="char(38)"/>
             <column name="deleted_by" type="char(38)"/>
-            <column name="last_edited_by" type="char(38)"/>
 
             <column name="created_on" type="datetime"/>
             <column name="deleted_on" type="datetime"/>
-            <column name="last_edited_on" type="datetime"/>
-
-            <column name="patientId" type="char(38)"/>
-            <column name="status" type="char(1)"/>
-            <column name="lesionmap" type="longtext"/>
-            <column name="backgroundImage" type="text"/>
-            <column name="comments" type="text"/>
 
         </createTable>
     </changeSet>
