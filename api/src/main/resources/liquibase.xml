@@ -41,6 +41,7 @@
             <column name="followup_procedure" type="int"/>
             <column name="followup_timeline" type="text"/>
             <column name="concept_id" type="int"/>
+            <column name="guideline_id" type="int"/>
 
             <column name="created_by" type="char(38)"/>
             <column name="deleted_by" type="char(38)"/>
@@ -61,6 +62,7 @@
             <column name="set_name" type="char(255)"/>
             <column name="concept_id" type="int"/>
             <column name="guideline_id" type="int"/>
+            <column name="conditionset_id" type="int"/>
 
             <column name="created_by" type="char(38)"/>
             <column name="deleted_by" type="char(38)"/>
@@ -70,4 +72,49 @@
 
         </createTable>
     </changeSet>
+
+    <changeSet author="beapen" id="2018-10-18-4">
+        <comment>Create the patientportal_guideline_interval Table</comment>
+        <createTable tableName="patientportal_guideline_interval">
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="uuid" type="char(38)"/>
+            <column name="interval_length" type="int"/>
+            <column name="interval_number" type="int"/>
+
+            <column name="created_by" type="char(38)"/>
+            <column name="deleted_by" type="char(38)"/>
+
+            <column name="created_on" type="datetime"/>
+            <column name="deleted_on" type="datetime"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet author="beapen" id="2018-10-18-5">
+        <comment>Create the patientportal_journal_entry Table</comment>
+        <createTable tableName="patientportal_journal_entry">
+            <column autoIncrement="true" name="entry_id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="uuid" type="char(38)"/>
+            <column name="parent_entry_id" type="int"/>
+            <column name="title" type="char(255)"/>
+            <column name="content" type="text"/>
+            <column name="creator" type="char(38)"/>
+            <column name="date_created" type="datetime"/>
+            <column name="date_deleted" type="datetime"/>
+            <column name="deleted" type="boolean"/>
+
+
+            <column name="created_by" type="char(38)"/>
+            <column name="deleted_by" type="char(38)"/>
+
+            <column name="created_on" type="datetime"/>
+            <column name="deleted_on" type="datetime"/>
+
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>
