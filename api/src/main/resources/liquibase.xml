@@ -50,4 +50,24 @@
 
         </createTable>
     </changeSet>
+
+    <changeSet author="beapen" id="2018-10-18-3">
+        <comment>Create the patientportal_conditionset Table</comment>
+        <createTable tableName="patientportal_conditionset">
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="uuid" type="char(38)"/>
+            <column name="set_name" type="char(255)"/>
+            <column name="concept_id" type="int"/>
+            <column name="guideline_id" type="int"/>
+
+            <column name="created_by" type="char(38)"/>
+            <column name="deleted_by" type="char(38)"/>
+
+            <column name="created_on" type="datetime"/>
+            <column name="deleted_on" type="datetime"/>
+
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
