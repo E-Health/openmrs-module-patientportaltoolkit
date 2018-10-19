@@ -193,4 +193,89 @@
         </createTable>
     </changeSet>
 
+
+    <changeSet author="beapen" id="2018-10-18-9">
+        <comment>Create the patientportal_personattributes Table</comment>
+        <createTable tableName="patientportal_personattributes">
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="uuid" type="char(38)"/>
+            <column name="patient_id" type="int"/>
+            <column name="reminder_trigger_date" type="datetime"/>
+
+
+            <column name="created_by" type="char(38)"/>
+            <column name="deleted_by" type="char(38)"/>
+
+            <column name="created_on" type="datetime"/>
+            <column name="deleted_on" type="datetime"/>
+
+        </createTable>
+    </changeSet>
+
+
+    <changeSet author="beapen" id="2018-10-18-10">
+        <comment>Create the patientportal_relation Table</comment>
+        <createTable tableName="patientportal_relation">
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="uuid" type="char(38)"/>
+            <column name="share_type_a" type="char(38)"/>
+            <column name="share_type_b" type="char(38)"/>
+
+
+            <column name="person_id" type="int"/>
+            <column name="relationship_person_id" type="int"/>
+            <column name="relationship_person_name" type="char(255)"/>
+            <column name="relationship_type" type="int"/>
+            <column name="share_start_date" type="datetime"/>
+            <column name="share_activate_date" type="datetime"/>
+            <column name="share_expire_date" type="datetime"/>
+            <column name="share_status" type="int"/>
+            <column name="add_connection_note" type="text"/>
+
+
+            <column name="creator" type="char(38)"/>
+            <column name="date_created" type="datetime"/>
+            <column name="changed_by" type="char(38)"/>
+            <column name="date_changed" type="datetime"/>
+            <column name="retired_by" type="char(38)"/>
+            <column name="date_retired" type="datetime"/>
+            <column name="retire_reason" type="text"/>
+            <column name="retired" type="boolean"/>
+
+
+            <column name="created_by" type="char(38)"/>
+            <column name="deleted_by" type="char(38)"/>
+            <column name="created_on" type="datetime"/>
+            <column name="deleted_on" type="datetime"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet author="beapen" id="2018-10-18-11">
+        <comment>Create the patientportal_share Table</comment>
+        <createTable tableName="patientportal_share">
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="uuid" type="char(38)"/>
+            <column name="retired" type="boolean"/>
+            <column name="share_type" type="char(38)"/>
+
+
+            <column name="person_id" type="int"/>
+            <column name="relatedperson_id" type="int"/>
+
+
+            <column name="created_by" type="char(38)"/>
+            <column name="deleted_by" type="char(38)"/>
+            <column name="created_on" type="datetime"/>
+            <column name="deleted_on" type="datetime"/>
+
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>
