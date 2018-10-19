@@ -163,4 +163,34 @@
 
         </createTable>
     </changeSet>
+
+    <changeSet author="beapen" id="2018-10-18-8">
+        <comment>Create the patientportal_form Table</comment>
+        <createTable tableName="patientportal_form">
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="uuid" type="char(38)"/>
+            <column name="name" type="char(255)"/>
+            <column name="description" type="text"/>
+            <column name="concept_id" type="int"/>
+            <column name="form_id" type="int"/>
+            <column name="retired" type="boolean"/>
+
+            <column name="creator" type="char(38)"/>
+            <column name="date_created" type="datetime"/>
+            <column name="changed_by" type="char(38)"/>
+            <column name="date_changed" type="datetime"/>
+            <column name="retired_by" type="char(38)"/>
+            <column name="date_retired" type="datetime"/>
+            <column name="retire_reason" type="text"/>
+
+            <column name="created_by" type="char(38)"/>
+            <column name="deleted_by" type="char(38)"/>
+            <column name="created_on" type="datetime"/>
+            <column name="deleted_on" type="datetime"/>
+
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>
