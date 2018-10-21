@@ -310,14 +310,13 @@
             <column name="uuid" type="char(38)"/>
 
 
-            <column name="person_id" type="int"/>
+            <column name="patient_id" type="int"/>
             <column name="response_user" type="int"/>
             <column name="target_date" type="datetime"/>
             <column name="orig_target_date" type="datetime"/>
             <column name="response_date" type="datetime"/>
             <column name="complete_date" type="datetime"/>
             <column name="status" type="int"/>
-            <column name="person_id" type="int"/>
             <column name="followup_procedure" type="char(38)"/>
             <column name="encounter_uuid" type="char(38)"/>
 
