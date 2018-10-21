@@ -398,4 +398,39 @@
         </createTable>
     </changeSet>
 
+    <changeSet author="beapen" id="2018-10-18-17">
+        <comment>Create the patientportal_reminder Table</comment>
+        <createTable tableName="patientportal_reminder">
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="uuid" type="char(38)"/>
+
+            <column name="doctor_name" type="char(255)"/>
+            <column name="response_type" type="char(255)"/>
+            <column name="response_comments" type="text"/>
+            <column name="response_attributes" type="char(255)"/>
+
+
+            <column name="patient_id" type="int"/>
+            <column name="response_user" type="int"/>
+            <column name="followup_procedure" type="int"/>
+
+
+            <column name="target_date" type="datetime"/>
+            <column name="orig_target_date" type="datetime"/>
+            <column name="response_date" type="datetime"/>
+            <column name="complete_date" type="datetime"/>
+            <column name="last_modified_date" type="datetime"/>
+            <column name="status" type="int"/>
+
+
+
+            <column name="created_by" type="char(38)"/>
+            <column name="deleted_by" type="char(38)"/>
+            <column name="created_on" type="datetime"/>
+            <column name="deleted_on" type="datetime"/>
+
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
