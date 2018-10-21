@@ -64,13 +64,7 @@ ${ ui.includeFragment("patientportaltoolkit", "headerForApp") }
         </div>
         
         
-        <div class="form-group">
-            <label class="control-label col-xs-2" for="userprofilePostalCode"> Zipcode </label>
-            <div class="col-xs-10">
-                <input class="form-control" id="userprofilePostalCode" type="text" value="${ (person.getPersonAddress().getPostalCode()) }"/>
-            </div>
-        </div>
-        
+
         <% if (personPreferences!=null){%>
             <div class="form-group">
                 <label class="control-label col-xs-2" for="userprofileMyCancerBuddies">My Cancer Buddies Status</label>

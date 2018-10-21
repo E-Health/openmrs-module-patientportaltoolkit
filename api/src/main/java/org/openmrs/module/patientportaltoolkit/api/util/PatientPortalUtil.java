@@ -15,6 +15,7 @@ import org.openmrs.module.patientportaltoolkit.PatientPortalRelation;
 import org.openmrs.module.patientportaltoolkit.PatientPortalToolkitConstants;
 import org.openmrs.module.patientportaltoolkit.api.PatientPortalRelationService;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -24,7 +25,19 @@ import java.util.Date;
 public class PatientPortalUtil {
 
     public String formatDate(Date date){
-        return new SimpleDateFormat(PatientPortalToolkitConstants.DATE_FORMAT_MONTHDATEYEAR).format(date);
+        // return new SimpleDateFormat(PatientPortalToolkitConstants.DATE_FORMAT_MONTHDATEYEAR).format(date);
+
+        String dateFormat = "";
+        try
+        {
+            SimpleDateFormat df = new SimpleDateFormat(PatientPortalToolkitConstants.DATE_FORMAT_MONTHDATEYEAR);
+            dateFormat = df.format(date);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return dateFormat;
     }
 
     public String formatDateWithSpecifiedFormat(Date date,String dateFormat){
