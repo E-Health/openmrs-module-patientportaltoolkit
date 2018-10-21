@@ -375,4 +375,27 @@
         </createTable>
     </changeSet>
 
+    <changeSet author="beapen" id="2018-10-18-16">
+        <comment>Create the patientportal_pcg_interval Table</comment>
+        <createTable tableName="patientportal_pcg_interval">
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="uuid" type="char(38)"/>
+
+
+            <column name="interval_length" type="int"/>
+            <column name="interval_number" type="int"/>
+            <column name="pcg_id" type="int"/>
+
+
+
+            <column name="created_by" type="char(38)"/>
+            <column name="deleted_by" type="char(38)"/>
+            <column name="created_on" type="datetime"/>
+            <column name="deleted_on" type="datetime"/>
+
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>
