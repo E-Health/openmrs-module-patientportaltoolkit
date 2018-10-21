@@ -433,4 +433,25 @@
 
         </createTable>
     </changeSet>
+
+    <changeSet author="beapen" id="2018-10-18-18">
+        <comment>Create the patientportal_securitylayers Table</comment>
+        <createTable tableName="patientportal_securitylayers">
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="uuid" type="char(38)"/>
+
+            <column name="securitylayername" type="char(255)"/>
+            <column name="securitylayerdescription" type="text"/>
+
+
+
+            <column name="created_by" type="char(38)"/>
+            <column name="deleted_by" type="char(38)"/>
+            <column name="created_on" type="datetime"/>
+            <column name="deleted_on" type="datetime"/>
+
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
